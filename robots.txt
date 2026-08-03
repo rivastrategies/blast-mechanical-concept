@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://blast-mech.com/sitemap.xml

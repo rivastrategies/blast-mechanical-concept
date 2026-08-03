@@ -1,0 +1,83 @@
+/* ============================================================
+   BLAST MECHANICAL: DESIGN TOKENS
+   Derived from approved brand kit. "Blast" = airflow, not force.
+   Built for: trust-first, mobile-first, older-demographic clarity.
+   ============================================================ */
+
+:root {
+
+  /* ---- COLOR: BRAND ---- */
+  --blue:         #0678CE;   /* primary: CTAs, links, active states */
+  --blue-deep:    #045A9E;   /* hover/pressed state for primary */
+  --navy:         #010123;   /* headlines, header/footer backgrounds */
+  --orange:       #FE7612;   /* secondary accent: sparingly, urgency/energy */
+  --orange-deep:  #ED4B00;   /* emergency/urgent CTA only; reserved, not decorative */
+  --cool-gray:    #F3F4F6;   /* section backgrounds, cards */
+
+  /* ---- COLOR: FUNCTIONAL ---- */
+  --success:      #1E8E5A;
+  --warning:      #C77700;
+  --error:        #C4342B;
+  --bg:           #FFFFFF;
+  --surface:      var(--cool-gray);
+  --text:         var(--navy);
+  --text-soft:    #4A4E5C;
+  --border:       #DCE0E5;
+
+  /* ---- TYPOGRAPHY ---- */
+  /* Display font has no confirmed web license yet. Oswald is the
+     production-safe fallback. Swap --font-display when licensed. */
+  --font-display: 'Oswald', 'Arial Narrow', sans-serif;      /* headlines */
+  --font-sub:     'Georgia', serif;                           /* subheadings: italic weight, stands in for Montserrat Bold Italic pending license check */
+  --font-label:   'Bebas Neue', sans-serif;                   /* labels, stat numbers, badges ONLY; never body copy */
+  --font-body:    'Inter', -apple-system, sans-serif;         /* all paragraph/body copy; readability over brand-purity here */
+
+  /* Type scale: sized up from typical web defaults.
+     Older-demographic readability is a functional requirement, not a style choice. */
+  --text-xs:    17px;
+  --text-sm:    19px;
+  --text-base:  22px;   /* body copy floor; never smaller */
+  --text-lg:    27px;
+  --text-xl:    34px;
+  --text-2xl:   44px;
+  --text-3xl:   58px;
+  --text-4xl:   72px;
+
+  --leading-tight:  1.2;
+  --leading-normal: 1.6;   /* generous line-height for body copy */
+
+  /* ---- SPACING (8px base) ---- */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --space-7: 96px;
+  --space-8: 128px;
+
+  /* ---- LAYOUT ---- */
+  --container-max: 1200px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* ---- SHADOW ---- */
+  --shadow-sm: 0 1px 3px rgba(1,1,35,0.08);
+  --shadow-md: 0 4px 16px rgba(1,1,35,0.10);
+  --shadow-lg: 0 12px 32px rgba(1,1,35,0.14);
+
+  /* ---- MOTION ---- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+
+  /* ---- TAP TARGETS ----
+     Older-demographic + mobile-first: buttons and links must be
+     comfortably tappable, not just WCAG-minimum. */
+  --tap-target-min: 56px;
+  --button-height:  68px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
