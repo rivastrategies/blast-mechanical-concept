@@ -760,14 +760,13 @@ div[style*="color:var(--warning)"] {
 }
 
 .membership-logo-link {
-  display: flex;
-  width: min(100%, 250px);
-  min-height: 140px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 12px;
-  padding: 18px 20px;
+  display: grid;
+  width: min(100%, 260px);
+  height: 160px;
+  grid-template-rows: 82px 24px;
+  place-items: center;
+  gap: 10px;
+  padding: 16px 22px;
   border: 2px solid rgba(255, 255, 255, 0.28);
   border-radius: 10px;
   background: #fff;
@@ -789,15 +788,21 @@ div[style*="color:var(--warning)"] {
   width: auto;
   max-width: 150px;
   height: auto;
-  max-height: 78px;
+  max-height: 74px;
   object-fit: contain;
 }
 
 .membership-logo-link span {
+  display: flex;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
   color: var(--navy);
   font-size: 15px;
   font-weight: 800;
-  line-height: 1.25;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
 }
 .developer-credit {
   display: block;
