@@ -500,6 +500,13 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
+.blast-review-grid-pending {
+  grid-template-columns: minmax(0, 760px);
+  justify-content: center;
+}
+.blast-review-grid-pending .blast-review-card {
+  min-height: 285px;
+}
 .blast-review-card {
   position: relative;
   display: flex;
