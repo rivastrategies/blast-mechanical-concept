@@ -108,7 +108,7 @@
   align-items: center;
   color: #fff;
   font-family: var(--font-body);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 900;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -505,7 +505,7 @@
   justify-content: center;
 }
 .blast-review-grid-pending .blast-review-card {
-  min-height: 285px;
+  min-height: 220px;
 }
 .blast-review-card {
   position: relative;
@@ -808,8 +808,8 @@
   .blast-home .primary-nav > ul { grid-template-columns: 1fr; }
 
   .blast-home-hero {
-    min-height: 1280px;
-    padding-top: 58px;
+    min-height: 0;
+    padding: 52px 0 112px;
     background:
       linear-gradient(rgba(2,5,47,0.62), rgba(2,5,47,0.9)),
       url('../assets/images/blast-social-preview.jpg') 68% center / cover no-repeat;
@@ -903,7 +903,7 @@
   .blast-home-logo img { width: 190px; }
   .blast-icon-circle { width: 102px; height: 102px; }
   .blast-icon-circle svg { width: 50px; height: 50px; }
-  .blast-home-hero { min-height: 1240px; }
+  .blast-home-hero { min-height: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
