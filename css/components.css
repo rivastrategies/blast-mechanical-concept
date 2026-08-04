@@ -750,6 +750,55 @@ div[style*="color:var(--warning)"] {
 .professional-memberships strong {
   color: var(--orange);
 }
+
+.membership-logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.membership-logo-link {
+  display: flex;
+  width: min(100%, 250px);
+  min-height: 140px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.28);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--navy) !important;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.membership-logo-link:hover,
+.membership-logo-link:focus-visible {
+  color: var(--navy) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
+}
+
+.membership-logo-link img {
+  display: block;
+  width: auto;
+  max-width: 150px;
+  height: auto;
+  max-height: 78px;
+  object-fit: contain;
+}
+
+.membership-logo-link span {
+  color: var(--navy);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.25;
+}
 .developer-credit {
   display: block;
   margin-top: 10px;
