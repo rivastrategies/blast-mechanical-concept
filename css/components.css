@@ -735,6 +735,21 @@ div[style*="color:var(--warning)"] {
   font-size: 17px;
   color: #7C93A2;
 }
+
+.professional-memberships {
+  margin-top: var(--space-4);
+  padding: var(--space-3) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.professional-memberships strong {
+  color: var(--orange);
+}
 .developer-credit {
   display: block;
   margin-top: 10px;

@@ -745,6 +745,21 @@
   color: #9eb2c3;
   font-size: 16px;
 }
+
+.blast-professional-memberships {
+  margin-top: 32px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.blast-professional-memberships strong {
+  color: var(--orange);
+}
 .blast-home-footer-bottom a { display: inline; color: #fff; }
 
 @media (max-width: 1080px) {
