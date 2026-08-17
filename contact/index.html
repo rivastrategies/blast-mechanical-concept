@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FYJ43LB42"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3FYJ43LB42');
+</script>
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -60,6 +68,7 @@
     </p>
     <p id="client-portal" class="contact-direct-links" style="margin-top:var(--space-2);">Existing customers can call <a href="tel:+12815064822">281-506-4822</a> for account or scheduling questions.</p>
     <p class="concept-note" style="margin-top:var(--space-3);">Online requests are being finalized. Please call 281-506-4822 or email <a href="mailto:service@blast-mech.com">service@blast-mech.com</a> for service.</p>
+    <p style="margin-top:var(--space-2); color:var(--text-soft);">Existing customer? <a href="#" data-hcp-portal="contact_page">Log in to your customer portal</a>.</p>
     <form class="contact-form" method="post" action="" style="margin-top:var(--space-4); display:flex; flex-direction:column; gap:var(--space-2);">
       <label for="contact-name">Name<br><input type="text" id="contact-name" name="name" autocomplete="name" required style="width:100%; min-height:var(--tap-target-min); padding:8px; border:1px solid var(--border); border-radius:var(--radius-sm);"></label>
       <label for="contact-phone">Phone<br><input type="tel" id="contact-phone" name="phone" autocomplete="tel" required style="width:100%; min-height:var(--tap-target-min); padding:8px; border:1px solid var(--border); border-radius:var(--radius-sm);"></label>
@@ -110,6 +119,7 @@
       <p><a href="../financing/">Financing</a></p>
       <p><a href="../blog/">Resources</a></p>
       <p><a href="../contact/">Contact</a></p>
+      <p><a href="#" data-hcp-portal="footer">Customer Portal</a></p>
     </div>
   </div><div class="wrap footer-bottom">
     &copy; 2026 Blast Mechanical. Residential HVAC services for Texas homeowners across East Houston/Harris County, Clear Lake/NASA Corridor, and Galveston County.
@@ -153,6 +163,8 @@
 </script>
 
 <script src="../js/contact-intent.js?v=1" defer></script>
+<script src="../js/hcp-portal.js" defer></script>
+<script src="../js/conversion-tracking.js" defer></script>
 <script src="../js/menu.js?v=2" defer></script>
 </body>
 </html>
