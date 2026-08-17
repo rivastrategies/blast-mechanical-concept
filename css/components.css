@@ -7,6 +7,8 @@
 html {
   scroll-behavior: smooth;
   background: var(--navy);
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -17,6 +19,8 @@ body {
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 .wrap {
@@ -736,74 +740,6 @@ div[style*="color:var(--warning)"] {
   color: #7C93A2;
 }
 
-.professional-memberships {
-  margin-top: var(--space-4);
-  padding: var(--space-3) 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  color: #fff;
-  text-align: center;
-  font-size: 18px;
-  line-height: 1.5;
-}
-
-.professional-memberships strong {
-  color: var(--orange);
-}
-
-.membership-logo-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-3);
-  margin-top: var(--space-3);
-}
-
-.membership-logo-link {
-  display: grid;
-  width: min(100%, 260px);
-  height: 160px;
-  grid-template-rows: 82px 24px;
-  place-items: center;
-  gap: 10px;
-  padding: 16px 22px;
-  border: 2px solid rgba(255, 255, 255, 0.28);
-  border-radius: 10px;
-  background: #fff;
-  color: var(--navy) !important;
-  text-decoration: none;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
-  transition: transform 160ms ease, box-shadow 160ms ease;
-}
-
-.membership-logo-link:hover,
-.membership-logo-link:focus-visible {
-  color: var(--navy) !important;
-  transform: translateY(-3px);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
-}
-
-.membership-logo-link img {
-  display: block;
-  width: auto;
-  max-width: 150px;
-  height: auto;
-  max-height: 74px;
-  object-fit: contain;
-}
-
-.membership-logo-link span {
-  display: flex;
-  height: 24px;
-  align-items: center;
-  justify-content: center;
-  color: var(--navy);
-  font-size: 15px;
-  font-weight: 800;
-  line-height: 1;
-  text-align: center;
-  white-space: nowrap;
-}
 .developer-credit {
   display: block;
   margin-top: 10px;
@@ -943,6 +879,23 @@ div[style*="color:var(--warning)"] {
 }
 
 /* ---- RESPONSIVE ---- */
+/* Nav-only fix for the 901-1300px gap: at these widths the full nav item
+   set can exceed available header width. Rather than clip items (e.g. "About Us"),
+   make just the nav scrollable here, without triggering the narrower-screen
+   header changes (phone number, logo size) that belong below 900px. */
+@media (min-width: 901px) and (max-width: 1300px) {
+  .primary-nav {
+    overflow-x: auto;
+    scrollbar-width: none;
+    justify-content: flex-start;
+  }
+  .primary-nav::-webkit-scrollbar { display: none; }
+  .primary-nav > ul {
+    width: max-content;
+    justify-content: flex-start;
+  }
+}
+
 @media (max-width: 900px) {
   .footer-grid { grid-template-columns: repeat(2, 1fr); }
   .header-row { flex-wrap: wrap; }

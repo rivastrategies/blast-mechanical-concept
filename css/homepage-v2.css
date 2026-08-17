@@ -568,7 +568,7 @@
   display: grid;
   position: fixed;
   z-index: 80;
-  right: 24px;
+  right: -9999px;
   bottom: 24px;
   width: min(370px, calc(100% - 48px));
   grid-template-columns: 92px 1fr;
@@ -582,14 +582,13 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translateX(calc(100% + 60px));
-  transition: transform 240ms ease, opacity 200ms ease, visibility 0s linear 240ms;
+  transition: right 240ms ease, opacity 200ms ease, visibility 0s linear 240ms;
 }
 .blast-plan-slidein.is-visible {
+  right: 24px;
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translateX(0);
   transition-delay: 0s;
 }
 .blast-plan-slidein img {
@@ -753,20 +752,6 @@
   font-size: 16px;
 }
 
-.blast-professional-memberships {
-  margin-top: 32px;
-  padding: 20px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.22);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
-  color: #fff;
-  text-align: center;
-  font-size: 18px;
-  line-height: 1.5;
-}
-
-.blast-professional-memberships strong {
-  color: var(--orange);
-}
 .blast-home-footer-bottom a { display: inline; color: #fff; }
 
 @media (max-width: 1080px) {
