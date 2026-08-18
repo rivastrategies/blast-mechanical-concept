@@ -1,4 +1,8 @@
 User-agent: *
-Disallow: /
+Disallow: /ac-repair-la-porte-tx/
+Disallow: /ac-replacement-la-porte-tx/
+Disallow: /heating-repair-la-porte-tx/
+Disallow: /heating-replacement-la-porte-tx/
+Disallow: /indoor-air-quality-la-porte-tx/
 
 Sitemap: https://blast-mech.com/sitemap.xml
