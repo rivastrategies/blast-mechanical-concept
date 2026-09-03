@@ -21,10 +21,10 @@
       document.head.appendChild(script);
     };
 
-    ['pointerdown', 'keydown', 'touchstart'].forEach((eventName) => {
+    ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach((eventName) => {
       window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
     });
-    window.addEventListener('load', () => window.setTimeout(loadAnalytics, 3500), { once: true });
+    window.addEventListener('load', () => window.setTimeout(loadAnalytics, 10000), { once: true });
   })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
