@@ -2,13 +2,30 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FYJ43LB42"></script>
+<!-- Google tag: queue analytics immediately, but keep the third-party library
+     off the critical rendering path until the page is settled or the visitor interacts. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-3FYJ43LB42');
+
+  (() => {
+    let loaded = false;
+    const loadAnalytics = () => {
+      if (loaded) return;
+      loaded = true;
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-3FYJ43LB42';
+      document.head.appendChild(script);
+    };
+
+    ['pointerdown', 'keydown', 'touchstart'].forEach((eventName) => {
+      window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
+    });
+    window.addEventListener('load', () => window.setTimeout(loadAnalytics, 3500), { once: true });
+  })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -28,7 +45,7 @@
 <link rel="preload" as="image" href="assets/images/blast-hero-art.svg" fetchpriority="high">
 <link rel="stylesheet" href="css/variables.css">
 <link rel="stylesheet" href="css/components.css?v=28">
-<link rel="stylesheet" href="css/homepage-v2.css?v=15">
+<link rel="stylesheet" href="css/homepage-v2.css?v=16">
 </head>
 <body class="blast-home home-page">
 

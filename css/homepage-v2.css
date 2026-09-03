@@ -264,7 +264,7 @@
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
 .blast-action:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(2,5,47,0.25); }
-.blast-action-orange { border-color: var(--blast-orange); background: var(--blast-orange); }
+.blast-action-orange { border-color: #C83F00; background: #C83F00; }
 .blast-action-blue { border-color: #fff; background: var(--blast-sky); }
 .blast-action-navy { border-color: #fff; background: var(--blast-navy); }
 .blast-action-light { border-color: #fff; color: var(--blast-navy); background: #fff; }
@@ -889,7 +889,7 @@
     text-decoration: none;
     text-transform: uppercase;
   }
-  .blast-mobile-actions a:last-child { background: var(--blast-orange); }
+  .blast-mobile-actions a:last-child { background: #C83F00; }
 }
 
 @media (max-width: 390px) {
