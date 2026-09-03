@@ -663,6 +663,14 @@
   gap: 70px;
 }
 .blast-area-band .blast-section-label { color: var(--blast-yellow); }
+.blast-about-card .blast-section-label,
+.blast-help-section .blast-section-label {
+  /* AA-safe darker shade for light backgrounds; base --blast-orange (#f45100) only
+     hits 3.49:1 on white, below the 4.5:1 required for 18px bold text. This passes
+     5.04:1 on white / 4.58:1 on cool-gray, while the navy-background instances
+     (hero kicker, reviews band) keep the brighter base orange, which already passes there. */
+  color: #C83F00;
+}
 .blast-area-band h2 { color: #fff; }
 .blast-area-band p:not(.blast-section-label) {
   max-width: 760px;
