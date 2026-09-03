@@ -1,0 +1,42 @@
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="">
+  <defs>
+    <linearGradient id="flowGradWide" x1="0%" y1="0%" x2="100%" y2="30%">
+      <stop offset="0%" stop-color="#FE7612" stop-opacity="0.9"/>
+      <stop offset="55%" stop-color="#0678CE" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#0678CE" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="flowGradMid" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0678CE" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#0678CE" stop-opacity="0.55"/>
+      <stop offset="70%" stop-color="#FE7612" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#FE7612" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="flowGradThin" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F3F4F6" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#F3F4F6" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#F3F4F6" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="72%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#0678CE" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0678CE" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="#010123"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <!-- minimal home roofline mark: abstract, not a depiction of any specific real property -->
+  <g stroke="#F3F4F6" stroke-opacity="0.13" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 990 630 L 1180 450 L 1370 630"/>
+    <path d="M 1030 630 L 1030 760 L 1330 760 L 1330 630"/>
+    <path d="M 1150 760 L 1150 660 L 1220 660 L 1220 760"/>
+  </g>
+
+  <!-- airflow ribbons -->
+  <path d="M -50 560 C 300 480, 550 620, 850 500 S 1350 380, 1650 430"
+        fill="none" stroke="url(#flowGradWide)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M -50 640 C 260 600, 480 700, 780 610 S 1300 480, 1650 540"
+        fill="none" stroke="url(#flowGradMid)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M -50 320 C 320 260, 600 340, 900 260 S 1400 160, 1650 210"
+        fill="none" stroke="url(#flowGradThin)" stroke-width="2" stroke-linecap="round"/>
+</svg>

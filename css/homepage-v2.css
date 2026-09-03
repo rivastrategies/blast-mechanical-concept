@@ -125,7 +125,7 @@
   background:
     radial-gradient(circle at 50% 15%, rgba(20,127,209,0.34), transparent 40%),
     linear-gradient(180deg, rgba(2,5,47,0.58) 0%, rgba(2,5,47,0.72) 55%, rgba(2,5,47,0.9) 100%),
-    url('../assets/images/blast-social-preview.jpg') center 58% / cover no-repeat;
+    url('../assets/images/blast-hero-art.svg') center 62% / cover no-repeat;
 }
 .blast-home-hero::before {
   content: "";
@@ -155,7 +155,7 @@
   left: 50%;
   width: 460px;
   height: 460px;
-  background: url('../assets/images/blast-badge.png?v=1') center / contain no-repeat;
+  background: url('../assets/images/blast-badge.webp') center / contain no-repeat;
   filter: grayscale(1) brightness(3.2);
   opacity: 0.10;
   transform: translate(-50%, -50%);
@@ -797,7 +797,7 @@
     padding: 52px 0 112px;
     background:
       linear-gradient(rgba(2,5,47,0.62), rgba(2,5,47,0.9)),
-      url('../assets/images/blast-social-preview.jpg') 68% center / cover no-repeat;
+      url('../assets/images/blast-hero-art.svg') 68% center / cover no-repeat;
   }
   .blast-home-hero-copy { margin: 0; text-align: center; }
   .blast-home-hero-copy::before {
