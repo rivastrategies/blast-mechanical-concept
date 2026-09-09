@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /request-received/
 Disallow: /ac-repair-la-porte-tx/
 Disallow: /ac-replacement-la-porte-tx/
 Disallow: /heating-repair-la-porte-tx/
