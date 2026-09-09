@@ -32,5 +32,21 @@
         });
       }
     });
+
+    if (link.getAttribute("data-hcp-portal") === "footer") {
+      const privacyItem = document.createElement(link.parentElement?.tagName === "P" ? "p" : "a");
+
+      if (privacyItem.tagName === "P") {
+        const privacyLink = document.createElement("a");
+        privacyLink.href = "/privacy/";
+        privacyLink.textContent = "Privacy Notice";
+        privacyItem.appendChild(privacyLink);
+        link.parentElement.insertAdjacentElement("afterend", privacyItem);
+      } else {
+        privacyItem.href = "/privacy/";
+        privacyItem.textContent = "Privacy Notice";
+        link.insertAdjacentElement("afterend", privacyItem);
+      }
+    }
   });
 })();
