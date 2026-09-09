@@ -115,6 +115,14 @@
 }
 .blast-home .primary-nav a:hover { color: var(--blast-yellow); }
 
+/* Keep the full desktop navigation inside common laptop viewports. */
+@media (min-width: 1241px) and (max-width: 1500px) {
+  .blast-home-logo { padding-right: 50px; }
+  .blast-home-logo img { width: min(290px, 24vw); }
+  .blast-home .primary-nav > ul { gap: clamp(12px, 1.35vw, 20px); }
+  .blast-home .primary-nav a { font-size: 14px; }
+}
+
 .blast-home-hero {
   position: relative;
   isolation: isolate;
@@ -762,7 +770,7 @@
 
 .blast-home-footer-bottom a { display: inline; color: #fff; }
 
-@media (max-width: 1080px) {
+@media (max-width: 1240px) {
   .blast-home-header { position: sticky; top: 0; }
   .blast-home-header-inner { min-height: 126px; }
   .blast-home .menu-toggle { display: inline-flex; margin-left: auto; }
@@ -779,6 +787,9 @@
   .blast-home .primary-nav.is-open { display: block; }
   .blast-home .primary-nav > ul { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .blast-home .primary-nav a { display: flex; min-height: 60px; padding: 12px 18px; border: 2px solid rgba(255,255,255,0.18); }
+}
+
+@media (max-width: 1080px) {
   .blast-service-icons { grid-template-columns: repeat(3, 1fr); max-width: 760px; }
   .blast-home-hero { min-height: 1080px; }
   .blast-about-layout { grid-template-columns: 0.7fr 1.3fr; gap: 40px; }
