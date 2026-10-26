@@ -3,7 +3,7 @@
  *
  * This file intentionally does not count a CTA click as a completed lead.
  * `generate_lead` is reserved for a confirmed form/booking success and can be
- * fired by the future Housecall Pro success callback or confirmation page via
+ * fired by the existing Housecall Pro success confirmation page via
  * `window.BlastTracking.trackLeadSubmit()`.
  */
 (() => {
@@ -55,27 +55,23 @@
     page_path: window.location.pathname,
     service_area: document.body.dataset.serviceArea || "",
     service_line: document.body.dataset.serviceLine || "",
+    service_intent: document.body.dataset.serviceIntent || "",
     ...attribution,
   });
 
   const sendEvent = (name, parameters = {}) => {
-    const payload = { ...pageContext(), ...parameters };
+    const payload = { ...pageContext(), ...parameters, send_to: "G-3FYJ43LB42" };
     window.dataLayer = window.dataLayer || [];
-
-    if (typeof window.gtag === "function") {
-      window.gtag("event", name, payload);
-    } else {
-      window.dataLayer.push({ event: name, ...payload });
+    if (typeof window.gtag !== "function") {
+      window.gtag = function () { window.dataLayer.push(arguments); };
     }
+    window.gtag("event", name, payload);
   };
 
   window.BlastTracking = {
     getAttribution: () => ({ ...attribution }),
+    trackEvent: sendEvent,
     trackLeadSubmit: (details = {}) => {
-      sendEvent("hcp_lead_submit", {
-        lead_source: "housecall_pro",
-        ...details,
-      });
       sendEvent("generate_lead", {
         lead_source: "housecall_pro",
         ...details,
@@ -84,14 +80,17 @@
   };
 
   document.addEventListener("click", (event) => {
-    const link = event.target.closest("a");
+    const link = event.target.closest?.("a");
     if (!link) return;
 
     const href = link.getAttribute("href") || "";
     const shared = {
       link_url: href,
       link_text: link.textContent.trim().slice(0, 80),
-      cta_location: link.dataset.ctaLocation || "unspecified",
+      cta_location: link.dataset.ctaLocation ||
+        (link.closest(".site-mobile-actions, .blast-mobile-actions") ? "mobile_bar" :
+          link.closest("header, .blast-topbar") ? "header" :
+          link.closest("footer") ? "footer" : "body"),
     };
 
     if (href.startsWith("tel:")) {
@@ -104,7 +103,7 @@
       return;
     }
 
-    if (link.classList.contains("btn-call") || link.classList.contains("btn-primary")) {
+    if (link.matches(".btn-call, .btn-primary, .blast-action, .blast-topbar-action, .site-mobile-actions a, .blast-mobile-actions a")) {
       sendEvent("cta_click", {
         ...shared,
         cta_label: shared.link_text.slice(0, 60),

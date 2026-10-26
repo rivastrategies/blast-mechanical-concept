@@ -2,30 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<!-- Google tag: queue analytics immediately, but keep the third-party library
-     off the critical rendering path until the page is settled or the visitor interacts. -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3FYJ43LB42"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-3FYJ43LB42');
-
-  (() => {
-    let loaded = false;
-    const loadAnalytics = () => {
-      if (loaded) return;
-      loaded = true;
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-3FYJ43LB42';
-      document.head.appendChild(script);
-    };
-
-    ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach((eventName) => {
-      window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
-    });
-    window.addEventListener('load', () => window.setTimeout(loadAnalytics, 10000), { once: true });
-  })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -164,7 +147,7 @@
           <p class="blast-section-label">Verified Trust</p>
           <h2>Credentials you can check</h2>
         </div>
-        <p>Blast Mechanical is a new company building its customer review history. Until verified reviews arrive, homeowners can evaluate the credentials already in place.</p>
+        <p>Read feedback from Blast Mechanical customers on Google and learn more about the team caring for your home.</p>
       </div>
 
       <div class="blast-review-grid blast-review-grid-pending" aria-label="Customer review status">
@@ -172,13 +155,13 @@
           <span class="blast-review-mark" aria-hidden="true">✓</span>
           <p>Texas HVAC License TACLA137109C and full insurance.</p>
           <strong>Documented trust signals</strong>
-          <small>Verified reviews will be added only after they come from real Blast Mechanical customers.</small>
+          <small>Residential AC repair, replacement, heating, and maintenance from our La Porte team.</small>
         </article>
       </div>
 
       <div class="blast-reviews-footer">
-        <p>No sample testimonials, invented ratings, or borrowed customer feedback.</p>
-        <a href="about/" class="blast-action blast-action-orange">About Our Standards</a>
+        <p>See what our customers say about their experience.</p>
+        <a href="https://www.google.com/maps/place/Blast+Mechanical/data=!4m2!3m1!1s0x0:0x2866d765e5907c19" class="blast-action blast-action-orange" target="_blank" rel="noopener noreferrer">Read Our Google Reviews</a>
       </div>
     </div>
   </section>

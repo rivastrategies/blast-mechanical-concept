@@ -8,7 +8,7 @@
  *
  * Any element with a `data-hcp-portal` attribute is treated as an HCP
  * portal link: its href is set here, it opens safely in a new tab, and
- * (if GTM/GA4's dataLayer is present) a tracking event fires on click.
+ * a GA4 tracking event fires on click.
  * The value of the attribute is used as the tracking "location" label,
  * e.g. data-hcp-portal="footer".
  */
@@ -24,10 +24,8 @@
     link.rel = "noopener noreferrer";
 
     link.addEventListener("click", () => {
-      // Prepared for GTM/GA4 once implemented; no-ops safely until then.
-      if (Array.isArray(window.dataLayer)) {
-        window.dataLayer.push({
-          event: "hcp_portal_click",
+      if (typeof window.BlastTracking?.trackEvent === "function") {
+        window.BlastTracking.trackEvent("hcp_portal_click", {
           link_location: link.getAttribute("data-hcp-portal") || "unspecified",
         });
       }
