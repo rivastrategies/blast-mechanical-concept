@@ -7,3 +7,11 @@
   .heating-lead-hero { padding-top:24px !important; padding-bottom:28px !important; }
   .heating-lead-actions .btn { width:100%; justify-content:center; min-height:48px; }
 }
+/* Keep the repair page's established dark hero without hiding its actions below the fold. */
+body.service-page > section.heating-lead-hero { padding:32px 0 !important; }
+body.service-page > section.heating-lead-hero h1 { font-size:clamp(2rem,4vw,2.65rem); line-height:1.12; }
+body.service-page > section.heating-lead-hero > .wrap > p.heating-lead-intro { font-size:1.15rem !important; line-height:1.55; }
+body.service-page > section.heating-lead-hero .btn { min-height:56px; font-size:20px; }
+@media(max-width:600px) {
+  body.service-page > section.heating-lead-hero { padding:24px 0 28px !important; }
+}
