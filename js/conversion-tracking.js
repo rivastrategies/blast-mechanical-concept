@@ -7,6 +7,38 @@
  * `window.BlastTracking.trackLeadSubmit()`.
  */
 (() => {
+  // Website call conversions use a Google forwarding number. Google routes that
+  // number to Blast's existing Housecall Pro tracking line (979-310-6577).
+  // Keep both visible numbers and click-to-call links in sync; no click itself
+  // is counted as a qualified call. Google applies the 60-second call threshold.
+  if (["blast-mech.com", "www.blast-mech.com"].includes(window.location.hostname)) {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    window.gtag("config", "AW-18440794915");
+    window.gtag("config", "AW-18440794915/yBEUCMqi2q8dEKPmoNlE", {
+      phone_conversion_number: "281-506-4822",
+      phone_conversion_callback: (formattedNumber, mobileNumber) => {
+        const digits = String(mobileNumber || "").replace(/\D/g, "");
+        if (!formattedNumber || !/^1?\d{10}$/.test(digits)) return;
+        const dialNumber = "+" + (digits.length === 10 ? "1" + digits : digits);
+        document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+          const current = link.getAttribute("href").replace(/\D/g, "");
+          if (current !== "12815064822" && current !== "2815064822") return;
+          link.setAttribute("href", "tel:" + dialNumber);
+          if (link.hasAttribute("aria-label")) {
+            link.setAttribute("aria-label", link.getAttribute("aria-label").replace(/281[\s.-]*506[\s.-]*4822/g, formattedNumber));
+          }
+        });
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        let textNode;
+        while ((textNode = walker.nextNode())) {
+          if (textNode.parentElement.closest("script, style, noscript, textarea")) continue;
+          textNode.nodeValue = textNode.nodeValue.replace(/(?:\(281\)|281)[\s.-]*506[\s.-]*4822/g, formattedNumber);
+        }
+      },
+    });
+  }
+
   const ATTRIBUTION_KEYS = [
     "utm_source",
     "utm_medium",
