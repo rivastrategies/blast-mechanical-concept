@@ -29,6 +29,25 @@
 <link rel="stylesheet" href="css/variables.css">
 <link rel="stylesheet" href="css/components.css?v=28">
 <link rel="stylesheet" href="css/homepage-v2.css?v=16">
+<script>
+/* Metricool website analytics */
+(function () {
+  'use strict';
+  if (!(window.location.hostname === "blast-mech.com" || window.location.hostname === "www.blast-mech.com")) return;
+  var path = window.location.pathname.toLowerCase().replace(/\/+$/, '');
+  var hash = "25adffbbeb47b7ae7daa91c0a18938e4";
+
+  if (!hash || window.__rivaMetricoolLoaded) return;
+  window.__rivaMetricoolLoaded = true;
+  var script = document.createElement('script');
+  script.src = 'https://tracker.metricool.com/resources/be.js';
+  script.async = true;
+  script.onload = function () {
+    if (window.beTracker) window.beTracker.t({ hash: hash });
+  };
+  document.head.appendChild(script);
+})();
+</script>
 </head>
 <body class="blast-home home-page">
 
